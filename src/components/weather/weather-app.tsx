@@ -10,6 +10,7 @@ import { DailyForecast } from "@/components/weather/daily-forecast";
 import { UvIndexCard } from "@/components/weather/uv-index-card";
 import { AirQualityCard } from "@/components/weather/air-quality-card";
 import { DashboardSkeleton } from "@/components/weather/dashboard-skeleton";
+import { WeatherChatbot } from "@/components/chat/weather-chatbot";
 import { useWeatherData } from "@/hooks/use-weather-data";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import type { City, TemperatureUnit } from "@/types/weather";
@@ -64,6 +65,8 @@ export function WeatherApp() {
           </div>
         </div>
       )}
+
+      <WeatherChatbot city={city} weather={data} unit={unit} />
     </div>
   );
 }
